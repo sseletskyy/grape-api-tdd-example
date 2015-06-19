@@ -91,6 +91,8 @@ GEM
       grape (>= 0.8.0)
       grape-entity
     hashie (3.4.1)
+    hashie-forbidden_attributes (0.1.1)
+      hashie (>= 3.0)
     i18n (0.7.0)
     ice_nine (0.11.1)
     jbuilder (2.3.0)
@@ -204,6 +206,7 @@ DEPENDENCIES
   capybara
   grape
   grape-swagger
+  hashie-forbidden_attributes
   jbuilder (~> 2.0)
   passenger
   rails (= 4.2.2)

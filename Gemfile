@@ -20,6 +20,7 @@ gem 'sqlite3'
 # gem 'capistrano-rails', group: :development
 
 gem 'grape'
+gem "hashie-forbidden_attributes" # this gem disables the security feature of strong_params at the model layer, allowing you the use of Grape's own params validation instead
 gem 'grape-swagger' # a great way of documenting an API
 
 group :development, :test do
