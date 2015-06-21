@@ -1,10 +1,12 @@
 require File.expand_path('../boot', __FILE__)
 
-require 'rails/all'
-# require 'active_record/railtie'
+# require 'rails/all'
+require 'active_record/railtie'
+require 'rails/test_unit/railtie'
+
 # require 'action_controller/railtie'
 # require 'action_mailer/railtie'
-# require 'rails/test_unit/railtie'
+
 
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
@@ -12,6 +14,19 @@ Bundler.require(*Rails.groups)
 
 module GrapeApiTddExample
   class Application < Rails::Application
+
+    #disable middlewares
+    config.middleware.delete "Rack::Sendfile"
+
+    # config.middleware.delete "ActionDispatch::Static"
+
+    config.middleware.delete "Rack::Lock"
+    config.middleware.delete "ActionDispatch::ShowExceptions"
+    config.middleware.delete "WebConsole::Middleware"
+    config.middleware.delete "ActionDispatch::Cookies"
+    config.middleware.delete "ActionDispatch::Session::CookieStore"
+    config.middleware.delete "ActionDispatch::Flash"
+
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
