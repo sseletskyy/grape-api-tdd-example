@@ -1,0 +1,10 @@
+@startuml
+
+"MOBILE APP" ->[1) Request] "SERVER"
+note right: СОХРАНЕНИЕ СЫРЫХ ДАННЫХ\nБЕЗ ОБРАБОТКИ
+"SERVER" -->[2) Save Data] "DB"
+"SERVER" -->[3) Response] "MOBILE APP"
+
+
+
+@enduml

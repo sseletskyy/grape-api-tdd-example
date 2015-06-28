@@ -1,0 +1,9 @@
+@startuml
+
+"SERVER WORKER" ->[1) Read] "DB"
+"DB" ->[1) Read] "SERVER WORKER"
+"SERVER WORKER" -->[2) Call] "LOGIC"
+note right: ОБРАБАТЫВАЕТ ДАННЫЕ\nИ СОХРАНЯЕТ ИХ В БД
+"LOGIC" -->[3) Save] "DB"
+
+@enduml
