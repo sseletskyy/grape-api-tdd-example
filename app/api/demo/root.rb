@@ -28,8 +28,7 @@ module Demo
 
     mount Demo::Version_1::Root
 
-    add_swagger_documentation base_path: "/api",
-                              api_version: 'v1',
+    add_swagger_documentation api_version: 'v1',
                               hide_documentation_path: true
 
   end
