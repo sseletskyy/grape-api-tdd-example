@@ -26,10 +26,19 @@ describe Demo do
                 param_2: 'y',
                 param_3: 'z'
             }
-
             post "/api/v1/big_data", {}, {
                      "RAW_POST_DATA" => cdata.to_json,
                      format: :json}
+            expect(response.status).to eq(201)
+          end
+        end
+        context 'use fixture sample data' do
+          let(:fixture_file) {"#{Rails.root}/spec/fixtures/cdata.json"}
+          let(:cdata) { JSON.parse(File.read(fixture_file)) }
+          it 'should return status 201' do
+            post "/api/v1/big_data", {}, {
+                                       "RAW_POST_DATA" => cdata.to_json,
+                                       format: :json}
             expect(response.status).to eq(201)
           end
         end

@@ -1,0 +1,12 @@
+@startuml
+
+"USER" -> "DEPARTMENT"
+"USER" --> "RELATION"
+"RELATION" --> "DEPARTMENT"
+"DEPARTMENT" -> "COMPANY"
+"DEPARTMENT" --> "RELATION" AS Rel2
+Rel2 -->[.] "COMPANY"
+
+
+
+@enduml
